@@ -32,7 +32,7 @@ public class TablesDaoImpl implements TablesDao {
 				+"sous_titre_traduit VARCHAR(500),"
 				+"debut_sequence VARCHAR(15) NOT NULL,"
 				+"fin_sequence VARCHAR(15) NOT NULL,"
-				+"CONSTRAINT password_presentation_pk PRIMARY KEY (numero_sous_titre));";
+				+"CONSTRAINT "+ nomFichier+"_pk " +"PRIMARY KEY (numero_sous_titre));";
 
 		try {
 			connexion=daoFactory.getConnection();
@@ -69,7 +69,7 @@ public class TablesDaoImpl implements TablesDao {
 		createTable(nomFichier);
 		Connection connexion=null;
 		PreparedStatement preparedStatement=null;
-		System.out.println("Appel de la méthode saveFileSubtitle pour sauvegarder dans la BDD !!! ");
+		System.out.println("Appel de la mÃ©thode saveFileSubtitle pour sauvegarder dans la BDD !!! ");
 		try {
 			connexion=daoFactory.getConnection();
 			preparedStatement=connexion.prepareStatement("INSERT INTO "+nomFichier+" (numero_sous_titre,sous_titre_original,debut_sequence,fin_sequence)"
@@ -106,7 +106,7 @@ public class TablesDaoImpl implements TablesDao {
 	public void updateFileSubtitle(String traduction,String nomFichier,int ligne) {
 		Connection connexion=null;
 		PreparedStatement preparedStatement=null;
-		System.out.println("Appel de la méthode updateFileSubtitle pour mettre à jour les sous titres dans la BDD !!! ");
+		System.out.println("Appel de la mÃ©thode updateFileSubtitle pour mettre Ã  jour les sous titres dans la BDD !!! ");
 		try {
 			connexion=daoFactory.getConnection();
 			preparedStatement=connexion.prepareStatement("UPDATE "+nomFichier+" SET sous_titre_traduit=? WHERE numero_sous_titre=?");

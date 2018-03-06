@@ -19,7 +19,7 @@ public class SubtitlesHandler {
 		translatedSubtitles = new ArrayList<String>();
 		BufferedReader br;
 		try {
-			//Il faut bien procéder ainsi pour gérer l'encodage.
+			//Il faut bien procÃ©der ainsi pour gÃ©rer l'encodage.
 			FileInputStream fis = new FileInputStream(fileName);
 	        InputStreamReader isr = new InputStreamReader(fis, "UTF8");
 			br = new BufferedReader(isr);
@@ -99,9 +99,6 @@ public class SubtitlesHandler {
 		return nbSsTitres;
 	}
 	
-	public void setTranslatedSubtitles(String traduction) {
-		translatedSubtitles.add(traduction);
-	}
 	
 	public ArrayList<String> getTranslatedSubtitles() {
 		return translatedSubtitles;

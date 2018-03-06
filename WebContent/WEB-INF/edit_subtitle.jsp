@@ -16,12 +16,18 @@
         <p>
             <label for="fileToUpload">Fichier à envoyer : </label>
             <input type="file" name="fileToUpload" id="fileToUpload" />
-            <input type="submit" value="Upload" name="upload"/>
+          	<input type="submit" value="Upload" name="upload"/>
         </p>
           
 	<c:if test="${ !empty fileToUpload }"><p><c:out value="Le fichier ${ fileToUpload } (${ description }) a été uploadé !" /></p></c:if>
-    
-        <input type="submit" style="position:fixed; top: 10px; right: 10px;" value="Sauvegarder" name="saveDB" disabled="${boutonInactif }" />
+    	<c:choose>
+        	<c:when test="${boutonInactif }"><input type="submit" style="position:fixed; top: 10px; right: 180px;" value="Sauvegarder en base de données" name="saveDB" disabled /></c:when>
+       		<c:otherwise><input type="submit" style="position:fixed; top: 10px; right: 180px;" value="Sauvegarder en base de données" name="saveDB"/></c:otherwise>
+        </c:choose>
+        <c:choose>
+        	<c:when test="${boutonInactif }"><input type="submit" style="position:fixed; top: 10px; right: 10px;" value="Export de la traduction" name="exportDB" disabled /></c:when>
+       		<c:otherwise><input type="submit" style="position:fixed; top: 10px; right: 10px;" value="Export de la traduction" name="exportDB"/></c:otherwise>
+        </c:choose>
 	    <table>
 	        <c:forEach items="${subtitles}" var="line" varStatus="status">
 	        	<tr>
