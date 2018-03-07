@@ -17,7 +17,7 @@
 		<servlet-name>EditSubtitle</servlet-name>
 		<servlet-class>com.subtitlor.servlets.EditSubtitle</servlet-class>
 	  	<multipart-config>
-            <location>D:/Programmation_Développez_des_sites_web_avec_Java_EE/Enregistrer_dans_une_base_de_données/Activite_Editeur_de_sous_titres_AM/fichiersTemp/</location>
+            <location>C:/fichiersTempEditeurSousTitres/</location>
             <max-file-size>10485760</max-file-size> 
             <max-request-size>52428800</max-request-size> 
             <file-size-threshold>1048576</file-size-threshold>

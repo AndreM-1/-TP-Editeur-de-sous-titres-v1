@@ -87,6 +87,7 @@ public class EditSubtitle extends HttpServlet {
 				}
 			}
 			subtitlesBdd=tablesDao.getSubtitlesBdd(nomFichier);
+			request.setAttribute("saveDB", request.getParameter("saveDB"));
 			request.setAttribute("subtitles", subtitlesBdd);
 		}
 		
@@ -95,6 +96,7 @@ public class EditSubtitle extends HttpServlet {
 			FilesHandler exportFile=new FilesHandler();
 			cheminComplet=cheminComplet.replace(nomFichier,nomFichier+"_sortie");
 			exportFile.exportSubtitlesBdd(subtitlesBdd,cheminComplet);
+			request.setAttribute("exportDB", request.getParameter("exportDB"));
 		}
 
 		this.getServletContext().getRequestDispatcher("/WEB-INF/edit_subtitle.jsp").forward(request, response);
